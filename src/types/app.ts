@@ -1,5 +1,3 @@
-// App-specific types
-
 export interface AppConfig {
   mode: 'demo' | 'production';
   backend: {

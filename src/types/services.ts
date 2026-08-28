@@ -1,12 +1,10 @@
-// Utility and Service Types
-
 import type { Segment, Coordinates, Street } from './domain';
 
 export interface RouteOptimizationInput {
   currentLocation: Coordinates;
   segments: Segment[];
   completedSegmentIds: string[];
-  workerSpeed: number; // km/h
+  workerSpeed: number;
 }
 
 export interface RouteOptimizationOutput {
@@ -21,16 +19,16 @@ export interface LocationMatchResult {
   matched: boolean;
   nearestStreet?: Street;
   nearestSegment?: Segment;
-  distance: number; // meters
+  distance: number;
   withinTolerance: boolean;
   status: 'CORRECT' | 'APPROACHING' | 'INCORRECT';
 }
 
 export interface GPSSimulationConfig {
   enabled: boolean;
-  speed: number; // m/s
-  updateInterval: number; // ms
-  accuracy: number; // meters
+  speed: number;
+  updateInterval: number;
+  accuracy: number;
 }
 
 export interface SyncQueueItem {
@@ -72,6 +70,6 @@ export interface DistanceCalculation {
 }
 
 export interface BearingCalculation {
-  bearing: number; // 0-360 degrees
-  direction: string; // 'N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'
+  bearing: number;
+  direction: string;
 }

@@ -15,7 +15,7 @@ export interface Sector {
   id: string;
   name: string;
   code: string;
-  mapImage?: string; // Base64 or URI
+  mapImage?: string;
   streets: Street[];
   pickupPoint: Coordinates;
   dropoffPoint: Coordinates;
@@ -28,10 +28,10 @@ export interface Street {
   id: string;
   sectorId: string;
   name: string;
-  geometry: Coordinates[]; // Array of coordinates defining the street
+  geometry: Coordinates[];
   startPoint: Coordinates;
   endPoint: Coordinates;
-  direction: number; // bearing in degrees
+  direction: number;
   status: StreetStatus;
   segments: Segment[];
   suggestedOrder: number;
@@ -67,15 +67,15 @@ export interface SegmentExecution {
   streetId: string;
   sectorId: string;
   status: 'PENDING' | 'IN_PROGRESS' | 'COMPLETED';
-  startNumber?: number; // Initial street number (e.g., 100)
-  endNumber?: number; // Final street number (e.g., 350)
+  startNumber?: number;
+  endNumber?: number;
   startedAt?: Date;
   completedAt?: Date;
   startLocation?: Location;
   endLocation?: Location;
   trackingPoints: Location[];
-  duration: number; // in seconds
-  distance: number; // in meters
+  duration: number;
+  distance: number;
   notes?: string;
 }
 
@@ -89,8 +89,8 @@ export interface Execution {
   segments: SegmentExecution[];
   plannedRoute: Route;
   realRoute: Route;
-  totalDistance: number; // meters
-  totalDuration: number; // seconds
+  totalDistance: number;
+  totalDuration: number;
   pauses: Pause[];
   issues: Issue[];
 }
@@ -111,7 +111,7 @@ export interface Pause {
   startedAt: Date;
   resumedAt?: Date;
   reason?: string;
-  duration: number; // seconds
+  duration: number;
 }
 
 export interface Issue {
@@ -131,11 +131,11 @@ export interface ExecutionMetrics {
   completionPercentage: number;
   plannedDistance: number;
   realDistance: number;
-  distanceEfficiency: number; // real / planned
+  distanceEfficiency: number;
   plannedDuration: number;
   realDuration: number;
-  timeEfficiency: number; // real / planned
-  averageSpeed: number; // km/h
+  timeEfficiency: number;
+  averageSpeed: number;
   deviations: number;
   pauseCount: number;
   totalPauseTime: number;
@@ -154,11 +154,11 @@ export interface ExecutionHistory {
 export interface StreetPattern {
   segmentId: string;
   streetId: string;
-  frequency: number; // how many times has this order appeared
-  startNumber?: number; // most common starting number
-  endNumber?: number; // most common ending number
-  averageDuration: number; // seconds
-  averageDistance: number; // meters
+  frequency: number;
+  startNumber?: number;
+  endNumber?: number;
+  averageDuration: number;
+  averageDistance: number;
 }
 
 export interface RouteLearning {
@@ -166,6 +166,6 @@ export interface RouteLearning {
   patterns: StreetPattern[];
   lastUpdated: Date;
   executionCount: number;
-  suggestedOrder: string[]; // segment IDs in suggested order
-  confidence: number; // 0-1
+  suggestedOrder: string[];
+  confidence: number;
 }

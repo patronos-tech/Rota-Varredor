@@ -1,5 +1,3 @@
-// UI/Component Props Types
-
 import type { Sector, Street, Segment, Execution, Location } from './domain';
 
 export interface SectorCardProps {

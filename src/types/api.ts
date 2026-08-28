@@ -1,5 +1,3 @@
-// API Response/Request Types
-
 import type { Sector, Street, Segment, Execution, ExecutionMetrics, RouteLearning } from './domain';
 
 export interface ApiResponse<T> {
@@ -15,7 +13,6 @@ export interface ApiError {
   details?: Record<string, any>;
 }
 
-// Sector Endpoints
 export interface CreateSectorRequest {
   name: string;
   code: string;
@@ -28,7 +25,6 @@ export interface CreateSectorResponse extends ApiResponse<Sector> {}
 
 export interface GetSectorsResponse extends ApiResponse<Sector[]> {}
 
-// Street Endpoints
 export interface CreateStreetRequest {
   sectorId: string;
   name: string;
@@ -40,7 +36,6 @@ export interface CreateStreetRequest {
 
 export interface CreateStreetResponse extends ApiResponse<Street> {}
 
-// Segment Endpoints
 export interface CreateSegmentRequest {
   sectorId: string;
   streetId: string;
@@ -52,7 +47,6 @@ export interface CreateSegmentRequest {
 
 export interface CreateSegmentResponse extends ApiResponse<Segment> {}
 
-// Execution Endpoints
 export interface StartExecutionRequest {
   sectorId: string;
   workerId: string;
@@ -89,13 +83,10 @@ export interface CompleteExecutionRequest {
 
 export interface CompleteExecutionResponse extends ApiResponse<Execution> {}
 
-// Metrics Endpoints
 export interface GetMetricsResponse extends ApiResponse<ExecutionMetrics> {}
 
-// Learning Endpoints
 export interface GetRouteLearningResponse extends ApiResponse<RouteLearning> {}
 
-// Location Tracking
 export interface TrackLocationRequest {
   executionId: string;
   latitude: number;
