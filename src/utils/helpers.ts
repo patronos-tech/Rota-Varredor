@@ -1,12 +1,7 @@
-// UUID generation
-import 'react-native-get-random-values';
-import { v4 as uuidv4 } from 'uuid';
-
 export function generateId(): string {
-  return uuidv4();
+  return Math.random().toString(36).substring(2, 11) + Date.now().toString(36);
 }
 
-// Date utilities
 export function getCurrentDate(): Date {
   return new Date();
 }
@@ -19,12 +14,10 @@ export function formatDateTime(date: Date): string {
   return date.toLocaleString('pt-BR');
 }
 
-// Object utilities
 export function deepClone<T>(obj: T): T {
   return JSON.parse(JSON.stringify(obj));
 }
 
-// Array utilities
 export function chunk<T>(array: T[], size: number): T[][] {
   const chunks: T[][] = [];
   for (let i = 0; i < array.length; i += size) {

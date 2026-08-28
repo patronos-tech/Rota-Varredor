@@ -1,5 +1,3 @@
-// Logging utilities
-
 export enum LogLevel {
   DEBUG = 'DEBUG',
   INFO = 'INFO',
