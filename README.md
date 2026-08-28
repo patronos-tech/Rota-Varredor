@@ -1,10 +1,10 @@
 # ROTA VARREDOR
 
-Aplicativo mobile para gestão e otimização de rotas de varrição manual de ruas.
+Aplicativo mobile para gestão e otimização de rotas de varriçao manual de ruas.
 
 ## Problema Resolvido
 
-Trabalhadores que realizam varrição manual recebem mapas impressos com um setor contendo múltiplas ruas. Este aplicativo transforma esse processo em uma experiência digital, permitindo:
+Trabalhadores que realizam varriçao manual recebem mapas impressos com um setor contendo múltiplas ruas. Este aplicativo transforma esse processo em uma experiência digital, permitindo:
 
 - Visualização do setor no mapa
 - Planejamento inteligente da rota
@@ -81,7 +81,7 @@ cd backend
 
 # Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\\Scripts\\activate
 
 # Install dependencies
 pip install -r requirements.txt
